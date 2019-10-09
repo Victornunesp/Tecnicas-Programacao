@@ -13,7 +13,8 @@ class Conta{
     public:
 
         Conta(float ini);
-
+        Conta();
+        
         void setup();
 
         void fazerDeposito();
