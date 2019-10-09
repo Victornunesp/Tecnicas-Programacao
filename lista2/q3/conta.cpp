@@ -2,6 +2,10 @@
 
 using namespace std;
 
+Conta::Conta(){
+    saldo = 0;
+}
+
 Conta::Conta(float ini){
     saldo = ini;
 }
