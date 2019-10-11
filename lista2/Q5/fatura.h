@@ -11,24 +11,24 @@ class Fatura{
 
         string numSerie;
         string descricao;
-        int quant;
+        int quantidade;
         float valor;
 
     public:
 
-    Fatura();
-    Fatura(string s, string d, int q, float v); 
+        Fatura();
+        Fatura(string s, string d, int q, float v); 
 
-    void setNumSerie(string s); 
-    void setDescricao(string d); 
-    void setQuantidade(int q); 
-    void setValor(float v);
+        void setNumSerie(string s); 
+        void setDescricao(string d); 
+        void setQuantidade(int q); 
+        void setValor(float v);
 
-    void mostrarFatura();
- 
-    string getNumSerie(); 
-    string getDescricao(); 
-    int getQuantidade(); 
-    float getValor(); 
+        void mostrarFatura();
+    
+        string getNumSerie(); 
+        string getDesc(); 
+        int getQuantidade(); 
+        float getValor(); 
 };  
 #endif

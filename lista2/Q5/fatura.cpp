@@ -1,20 +1,21 @@
+#include <iostream>
 #include "fatura.h"
 #define INICIAL 0
 #define NUMSERIESTD 00000000
-#define TAMMAXDESC 16
-#define PRECISAO 2
+#define TAMAXDES 16
+#define CASAS 2
 
 using namespace std;
 
 Fatura::Fatura(){
 
     setNumSerie(NUMSERIESTD);
-    setDescricao("Produto");
+    setDescricao("Item");
     setQuantidade(INICIAL);
     setValor(INICIAL);
 }
 
-Fatura::Fatura(string s, string d, int q, float p){
+Fatura::Fatura(string s, string d, int q, float v){
 
     setNumSerie(s);
     setDescricao(d);
@@ -29,14 +30,12 @@ void Fatura::setNumSerie(string s){
 
 void Fatura::setDescricao(string d){
 
-    int tamanho = START;
-    int dif = START;
-    int i = START;
+    int tamanho = INICIAL;
+    int i = INICIAL;
 
     tamanho = d.size();
-    dif = TAMMAXDESC - tamanho;
 
-    while((i <= TAMMAXDESC) and (i <= tamanho)){
+    while((i <= TAMAXDES and i <= tamanho)){
 
         descricao += d[i++];
     }
@@ -44,31 +43,32 @@ void Fatura::setDescricao(string d){
 
 void Fatura::setQuantidade(int q){
 
-    if(q >= START) quantidade = q;
-    else quantidade = START;
+    if(q >= INICIAL) quantidade = q;
+    else quantidade = INICIAL;
 }
 
-void Fatura::setPreco(float p){
+void Fatura::setValor(float v){
 
-    if(p >= START) preco = p;
-    else preco = START;
+    if(v >= INICIAL) valor = v;
+    else valor = INICIAL;
 }
-
 
 void Fatura::mostrarFatura(){
 
-    cout << "\nItem                          |Quantidade     |Valor" << endl;
-
-    cout << "(" << getNSerie() << ") " << getDescricao() << "   " << getQuantidade() << "               R$ " << fixed << setprecision(PRECISAO) << getPreco() << endl;
-    cout << "\nTotal: R$" << fixed << setprecision(PRECISAO) << getPreco()*getQuantidade() << endl;
+    cout << "\n\n  |PRODUTO| " << getNumSerie() << endl;
+    cout << "Descrito como: " << getDesc() << endl;
+    cout << getQuantidade() << " unidade(s)" << endl;
+    cout << "\n\nVALOR TOTAL\t";
+    cout << "R$ " << fixed << setprecision(CASAS) << getQuantidade()*getValor();
+    cout << endl << endl;
 }
 
-string Fatura::getNSerie(){
+string Fatura::getNumSerie(){
 
-    return nSerie;
+    return numSerie;
 }
 
-string Fatura::getDescricao(){
+string Fatura::getDesc(){
 
     return descricao;
 }
@@ -78,7 +78,7 @@ int Fatura::getQuantidade(){
     return quantidade;
 }
 
-float Fatura::getPreco(){
+float Fatura::getValor(){
 
-    return preco;
+    return valor;
 }
