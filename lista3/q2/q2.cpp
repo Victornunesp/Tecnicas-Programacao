@@ -9,7 +9,7 @@ int main(){
     ofstream randomfile;    
     int random;
 
-    randomfile.open("random.txt",ios::app);
+    randomfile.open("random.txt");
     
     srand(time(NULL));
     
