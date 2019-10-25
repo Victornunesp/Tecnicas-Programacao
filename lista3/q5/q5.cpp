@@ -15,13 +15,13 @@ int main()
     criarArquivo();
     setVetor(valores);
 
-    for(int i = 0;i < valores.size();i++)
+    for (int i = 0; i < valores.size(); i++)
     {
-        if(repetido(valores[i], i, valores))
+        if (repetido(valores[i], i, valores))
         {
             cout << valores[i] << " aparece " << count(valores.begin(), valores.end(), valores[i]) << " vezes.\n";
         }
     }
-    
+
     return 0;
 }
