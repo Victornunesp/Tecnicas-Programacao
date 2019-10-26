@@ -60,6 +60,11 @@ bool repetido(int busca, int indice, vector<int> v)
     return chave;
 }
 
+bool ordenarFreq(DadosSensor a, DadosSensor b)
+{
+    return a.getFrequencia() >= b.getFrequencia();
+}
+
 void vetorDados(vector<int> v, vector<DadosSensor> &vSensor)
 {
     for (int i = 0; i < v.size(); i++)

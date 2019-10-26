@@ -33,10 +33,11 @@ int main()
 
     sort(intvet.begin(), intvet.end());
 
-    for(int valor : intvet)
+    for (auto i : intvet)
     {
-        cout << valor;
-    }cout << endl;
+        cout << i << "     [" << cont + 1 << "]" << endl;
+        cont++;
+    }
 
     cout << "Menor valor: " << intvet[INICIO] << endl;
     cout << "Maior valor: " << intvet[FIM] << endl;

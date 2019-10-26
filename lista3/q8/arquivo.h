@@ -14,6 +14,8 @@ void mostrarVetor(vector<int> &v);
 
 bool repetido(int encontrar, int posicao, vector<int> v);
 
+bool ordenarFreq(DadosSensor a, DadosSensor b);
+
 void vetorDados(vector<int> v, vector<DadosSensor> &vSensor);
 
 void show(vector<DadosSensor> &vSensor);
